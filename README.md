@@ -1,6 +1,6 @@
 # Repositorio semilla: bot de Telegram con Telegraf y TypeScript :seedling:
 
-> Este es uno de los repositorios que utilizamos en el curso **Desarrollo de bots de Telegram en TypeScript**, [disponible en YouTube](https://www.youtube.com/playlist?list=PL7q-McYJyHlgVGQIRYVKl381twyJ4XM_h). Te recomendamos que mires el curso para entender un poco más sobre las tecnologías que elegimos. :smiley:
+> Este es uno de los repositorios que utilizamos en el curso **Desarrollo de bots de Telegram en TypeScript**, [disponible en YouTube](https://www.youtube.com/playlist?list=PL7q-McYJyHlip2-k4RW1nDxJWsFuO4nO1). Te recomendamos que mires el curso para entender un poco más sobre las tecnologías que elegimos. :smiley:
 
 ¡Bienvenida/o! En este repositorio encontrarás una plantilla (de las infinitas posibles) para crear un bot de Telegram utilizando NodeJS y TypeScript. Las principales tecnologías que utilizamos son:
 
