@@ -1,113 +1,53 @@
-# node-typescript-boilerplate
+# Repositorio semilla: bot de Telegram con Telegraf y TypeScript :seedling:
 
-[![Sponsor][sponsor-badge]][sponsor]
-[![TypeScript version][ts-badge]][typescript-4-8]
-[![Node.js version][nodejs-badge]][nodejs]
-[![APLv2][license-badge]][license]
-[![Build Status - GitHub Actions][gha-badge]][gha-ci]
+> Este es uno de los repositorios que utilizamos en el curso **Desarrollo de bots de Telegram en TypeScript**, [disponible en YouTube](https://www.youtube.com/playlist?list=PL7q-McYJyHlgVGQIRYVKl381twyJ4XM_h). Te recomendamos que mires el curso para entender un poco más sobre las tecnologías que elegimos. :smiley:
 
-👩🏻‍💻 Developer Ready: A comprehensive template. Works out of the box for most [Node.js][nodejs] projects.
+¡Bienvenida/o! En este repositorio encontrarás una plantilla (de las infinitas posibles) para crear un bot de Telegram utilizando NodeJS y TypeScript. Las principales tecnologías que utilizamos son:
 
-🏃🏽 Instant Value: All basic tools included and configured:
+- [NodeJS](https://nodejs.org/es/): entorno de ejecución para JavaScript/TypeScript.
+- [telegraf.js](https://telegraf.js.org/): framework para crear bots de Telegram.
+- [Jest](https://jestjs.io/): framework para escribir tests.
 
-- [TypeScript][typescript] [4.8][typescript-4-8]
-- [ESM][esm]
-- [ESLint][eslint] with some initial rules recommendation
-- [Jest][jest] for fast unit testing and code coverage
-- Type definitions for Node.js and Jest
-- [Prettier][prettier] to enforce consistent code style
-- NPM [scripts](#available-scripts) for common operations
-- [EditorConfig][editorconfig] for consistent coding style
-- Reproducible environments thanks to [Volta][volta]
-- Example configuration for [GitHub Actions][gh-actions]
-- Simple example of TypeScript code and unit test
+Para crear un proyecto siguiendo esta plantilla, lo único que tenés que hacer es clickear en el botón que dice `Use this template`. ¡Y no te olvides de cambiarle el nombre en el `package.json`!
 
-🤲 Free as in speech: available under the APLv2 license.
+## :point_up: Prerrequisitos - para instalar antes de empezar
 
-## Getting Started
+Vas a necesitar un IDE o al menos un editor de texto que coloree la sintaxis. Recomendamos utilizar [Visual Studio Code](https://code.visualstudio.com/) - que se lleva muy bien con proyectos TypeScript - enriquecido con los siguientes plugins:
 
-This project is intended to be used with the latest Active LTS release of [Node.js][nodejs].
+- [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest)
 
-### Use as a repository template
+Para ejecutar el código es necesario tener NodeJS en su versión 16 (`lts/gallium`). Para instalarlo recomendamos utilizar el manejador de versiones [`nvm`](https://github.com/nvm-sh/nvm), aunque también podés hacerlo manualmente siguiendo las instrucciones adecuadas para tu sistema operativo.
 
-To start, just click the **[Use template][repo-template-action]** link (or the green button). Start adding your code in the `src` and unit tests in the `__tests__` directories.
+## :ballot_box_with_check: Configuración inicial del proyecto
 
-### Clone repository
+Asumiendo que ya configuraste todos los prerrequisitos, estos son los comandos que deberías ejecutar la primera vez que trabajes en el proyecto:
 
-To clone the repository, use the following commands:
+```shell
+# Copia las variables de entorno necesarias para comunicarse con la Bot API de Telegram.
+cp .env.example .env
 
-```sh
-git clone https://github.com/jsynowiec/node-typescript-boilerplate
-cd node-typescript-boilerplate
+# Instala las dependencias Node del proyecto.
 npm install
 ```
 
-### Download latest release
+¡No te olvides de reemplazar el valor del `BOT_TOKEN` por el que te dio [@BotFather](https://t.me/botfather).
 
-Download and unzip the current **main** branch or one of the tags:
+## :woman_technologist: :man_technologist: Comandos útiles para el día a día
 
-```sh
-wget https://github.com/jsynowiec/node-typescript-boilerplate/archive/main.zip -O node-typescript-boilerplate.zip
-unzip node-typescript-boilerplate.zip && rm node-typescript-boilerplate.zip
+A continuación, algunos comandos necesarios para el desarrollo diario en este proyecto.
+
+```shell
+# Levanta el proyecto y recarga automáticamente si hay cambios.
+npm start
+
+# Corre ESlint y Prettier, corrigiendo los errores que pueda y formateando el código.
+npm run ling
+
+# Ejecuta los tests una sola vez.
+npm test
+
+# Ejecuta los tests y se queda esperando por cambios.
+npm test:watch
 ```
-
-## Available Scripts
-
-- `clean` - remove coverage data, Jest cache and transpiled files,
-- `prebuild` - lint source files and tests before building,
-- `build` - transpile TypeScript to ES6,
-- `build:watch` - interactive watch mode to automatically transpile source files,
-- `lint` - lint source files and tests,
-- `prettier` - reformat files,
-- `test` - run tests,
-- `test:watch` - interactive watch mode to automatically re-run tests
-
-## Additional Information
-
-### Why include Volta
-
-[Volta][volta]’s toolchain always keeps track of where you are, it makes sure the tools you use always respect the settings of the project you’re working on. This means you don’t have to worry about changing the state of your installed software when switching between projects. For example, it's [used by engineers at LinkedIn][volta-tomdale] to standardize tools and have reproducible development environments.
-
-I recommend to [install][volta-getting-started] Volta and use it to manage your project's toolchain.
-
-### ES Modules
-
-This template uses native [ESM][esm]. Make sure to read [this][nodejs-esm], and [this][ts47-esm] first.
-
-If your project requires CommonJS, you will have to [convert to ESM][sindresorhus-esm].
-
-Please do not open issues for questions regarding CommonJS or ESM on this repo.
-
-## Backers & Sponsors
-
-Support this project by becoming a [sponsor][sponsor].
-
-## License
-
-Licensed under the APLv2. See the [LICENSE](https://github.com/jsynowiec/node-typescript-boilerplate/blob/main/LICENSE) file for details.
-
-[ts-badge]: https://img.shields.io/badge/TypeScript-4.8-blue.svg
-[nodejs-badge]: https://img.shields.io/badge/Node.js->=%2016.13-blue.svg
-[nodejs]: https://nodejs.org/dist/latest-v14.x/docs/api/
-[gha-badge]: https://github.com/jsynowiec/node-typescript-boilerplate/actions/workflows/nodejs.yml/badge.svg
-[gha-ci]: https://github.com/jsynowiec/node-typescript-boilerplate/actions/workflows/nodejs.yml
-[typescript]: https://www.typescriptlang.org/
-[typescript-4-8]: https://devblogs.microsoft.com/typescript/announcing-typescript-4-8/
-[license-badge]: https://img.shields.io/badge/license-APLv2-blue.svg
-[license]: https://github.com/jsynowiec/node-typescript-boilerplate/blob/main/LICENSE
-[sponsor-badge]: https://img.shields.io/badge/♥-Sponsor-fc0fb5.svg
-[sponsor]: https://github.com/sponsors/jsynowiec
-[jest]: https://facebook.github.io/jest/
-[eslint]: https://github.com/eslint/eslint
-[wiki-js-tests]: https://github.com/jsynowiec/node-typescript-boilerplate/wiki/Unit-tests-in-plain-JavaScript
-[prettier]: https://prettier.io
-[volta]: https://volta.sh
-[volta-getting-started]: https://docs.volta.sh/guide/getting-started
-[volta-tomdale]: https://twitter.com/tomdale/status/1162017336699838467?s=20
-[gh-actions]: https://github.com/features/actions
-[repo-template-action]: https://github.com/jsynowiec/node-typescript-boilerplate/generate
-[esm]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
-[sindresorhus-esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
-[nodejs-esm]: https://nodejs.org/docs/latest-v16.x/api/esm.html
-[ts47-esm]: https://devblogs.microsoft.com/typescript/announcing-typescript-4-8/#esm-nodejs
-[editorconfig]: https://editorconfig.org
