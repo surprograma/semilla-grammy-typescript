@@ -19,7 +19,10 @@ bot.start(async (ctx) => {
 
 // Define el comando /help
 bot.help(async (ctx) => {
-  await ctx.reply('Todavía no sé cuál es mi gracia... 🤔');
+  await ctx.replyWithMarkdownV2(`Por el momento, sé hacer dos cosas:
+
+✔️ *Darte un número mágico* \\| Usá el comando /numero
+✔️ *Saludarte* \\| Enviame un mensaje que diga exactamente _Mi nombre es_`);
 });
 
 // Define el comando que especifiquemos - /numero, en este caso
@@ -38,7 +41,7 @@ bot.on('sticker', async (ctx) => {
 });
 
 // Reacciona a los mensajes que cumplan con la expresión regular
-bot.hears(/Mi nombre es (\w+)/, async (ctx) => {
+bot.hears(/Mi nombre es (\w+)/i, async (ctx) => {
   const nombre = ctx.match[1];
   await ctx.reply(`👋 ¡Qué bonito verte de nuevo, ${nombre}!`);
 });
