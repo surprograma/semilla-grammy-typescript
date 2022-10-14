@@ -4,7 +4,7 @@ import { configuracionDelEntorno } from './config';
 const { token } = configuracionDelEntorno();
 const bot = new Telegraf(token);
 
-bot.start((ctx) => {
+bot.start(async (ctx) => {
   /* 
     El contexto (ctx) contiene información sobre el chat desde donde se invocó al bot.
     
@@ -13,11 +13,11 @@ bot.start((ctx) => {
     - También tiene varios métodos que permiten realizar acciones: responder (ctx.reply), reenviar
     el mensaje (ctx.forwardMessage), cambiar la foto del chat (ctx.setChatPhoto), etc.
   */
-  ctx.reply(`¡Hola ${ctx.from.first_name}!`);
+  await ctx.reply(`¡Hola ${ctx.from.first_name}!`);
 });
 
-bot.help((ctx) => {
-  ctx.reply('Todavía no sé para qué sirvo... 🤔');
+bot.help(async (ctx) => {
+  await ctx.reply('Todavía no sé para qué sirvo... 🤔');
 });
 
 bot.launch();
