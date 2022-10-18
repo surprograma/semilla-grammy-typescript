@@ -1,11 +1,11 @@
-import { Telegraf } from 'telegraf';
+import { Bot } from 'grammy';
 import { configuracionDelEntorno } from './config';
 
 const { token } = configuracionDelEntorno();
-const bot = new Telegraf(token);
+const bot = new Bot(token);
 
 // Define el comando /start
-bot.start(async (ctx) => {
+bot.command('start', async (ctx) => {
   /* 
     El contexto (ctx) contiene información sobre el chat desde donde se invocó al bot.
     
@@ -18,25 +18,28 @@ bot.start(async (ctx) => {
 });
 
 // Define el comando /help
-bot.help(async (ctx) => {
-  await ctx.replyWithMarkdownV2(`Por el momento, sé hacer dos cosas:
+bot.command('help', async (ctx) => {
+  await ctx.reply(
+    `Por el momento, sé hacer dos cosas:
 
 ✔️ *Darte un número mágico* \\| Usá el comando /numero
-✔️ *Saludarte* \\| Enviame un mensaje que diga exactamente _Mi nombre es_`);
+✔️ *Saludarte* \\| Enviame un mensaje que diga exactamente _Mi nombre es_`,
+    { parse_mode: 'MarkdownV2' },
+  );
 });
 
 // Define el comando que especifiquemos - /numero, en este caso
 bot.command('numero', async (ctx) => {
   const elegido = Math.floor(Math.random() * 100);
-  await ctx.replyWithMarkdownV2(
-    `Tu número de la fortuna es el *${elegido}* 🤑`,
-  );
+  await ctx.reply(`Tu número de la fortuna es el *${elegido}* 🤑`, {
+    parse_mode: 'MarkdownV2',
+  });
 });
 
 // Reacciona al evento especificado - la recepción de un sticker, en este caso
-bot.on('sticker', async (ctx) => {
+bot.on('msg:sticker', async (ctx) => {
   await ctx.reply('Lindo sticker', {
-    reply_to_message_id: ctx.message.message_id,
+    reply_to_message_id: ctx.msg.message_id,
   });
 });
 
@@ -47,10 +50,6 @@ bot.hears(/Mi nombre es (\w+)/i, async (ctx) => {
 });
 
 // Inicializa el bot
-bot.launch();
+bot.start();
 
 console.log('🤖 ¡Listo para responder mensajes!');
-
-// Baja el servidor cuando recibe la orden por la consola
-process.once('SIGINT', () => bot.stop('SIGINT'));
-process.once('SIGTERM', () => bot.stop('SIGTERM'));

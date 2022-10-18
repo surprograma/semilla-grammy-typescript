@@ -1,7 +1,7 @@
 {
-  "name": "semilla-telegraf-typescript",
+  "name": "semilla-telegraf-grammy",
   "version": "0.0.1",
-  "description": "Semilla para implementar un bot de Telegram utilizando el framework telegraf.js",
+  "description": "Semilla para implementar un bot de Telegram utilizando el framework grammY",
   "author": "Federico Aloi",
   "license": "MIT",
   "engines": {
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "dotenv": "^16.0.3",
-    "telegraf": "^4.4.2",
+    "grammy": "^1.11.2",
     "tslib": "~2.4"
   },
   "scripts": {
