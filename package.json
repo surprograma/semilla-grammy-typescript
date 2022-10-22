@@ -1,5 +1,5 @@
 {
-  "name": "semilla-telegraf-grammy",
+  "name": "semilla-grammy-typescript",
   "version": "0.0.1",
   "description": "Semilla para implementar un bot de Telegram utilizando el framework grammY",
   "author": "Federico Aloi",
