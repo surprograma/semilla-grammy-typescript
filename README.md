@@ -43,7 +43,7 @@ A continuación, algunos comandos necesarios para el desarrollo diario en este p
 npm start
 
 # Corre ESlint y Prettier, corrigiendo los errores que pueda y formateando el código.
-npm run ling
+npm run lint
 
 # Ejecuta los tests una sola vez.
 npm test
