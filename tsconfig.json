@@ -10,7 +10,6 @@
     "importHelpers": true,
     "alwaysStrict": true,
     "sourceMap": true,
-    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
